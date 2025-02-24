@@ -4,8 +4,8 @@ import Container from './components/layout/Container';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 
-import Login from './components/registro/Login';
-import Register from './components/registro/Register';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
 
 function App() {
   return (
