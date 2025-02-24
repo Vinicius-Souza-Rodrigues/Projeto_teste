@@ -18,7 +18,7 @@ class UsuarioSerializer(serializers.ModelSerializer):
 class TarefasSerializer(serializers.ModelSerializer):
     class Meta:
         model = Item
-        fields = ['name', 'description', 'state', 'date']
+        fields = ['id', 'name', 'description', 'state', 'date']
     
     def create(self, validated_data):
         return Item.objects.create(**validated_data)
