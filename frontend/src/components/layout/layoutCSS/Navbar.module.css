@@ -1,0 +1,27 @@
+* {
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.imagem {
+    width: 77px;
+    height: 77px;
+    cursor: pointer;
+}
+
+.campo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    background-color: rgb(92, 167, 92);
+    font-size: 25px;
+    font-weight: bolder;
+    height: 20vh;
+}
+
+.itens {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}

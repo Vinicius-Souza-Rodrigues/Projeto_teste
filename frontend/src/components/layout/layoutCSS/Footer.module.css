@@ -1,0 +1,12 @@
+.campo {
+    display: flex;
+    align-items: center;
+    color: white;
+    height: 10vh;
+    background-color: rgb(151, 147, 147);
+}
+
+.campo p {
+    margin-left: 1.5vw;
+    
+}

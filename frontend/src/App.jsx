@@ -1,41 +1,28 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import MainLayout from "./components/container/MainContainer";
+import AuthLayout from "./components/container/AuthContainer";
+import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
 
-import Container from './components/layout/Container';
-import Navbar from './components/layout/Navbar';
-import Footer from './components/layout/Footer';
-
-import Login from './components/auth/Login';
-import Register from './components/auth/Register';
+import TarefasLista from "./components/layout/TarefasLista";
 
 function App() {
   return (
     <Router>
-      <AppRoutes />
+      <Routes>
+
+        <Route element={<AuthLayout />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Route>
+
+        <Route element={<MainLayout />}>
+                <Route path="/" element={<TarefasLista />} />
+                <Route path="/lista" element={<TarefasLista />} />
+        </Route>
+
+      </Routes>
     </Router>
-  );
-}
-
-function AppRoutes() {
-  const location = useLocation();
-  const authRoutes = ['/login', '/register'];
-
-  const isAuthPage = authRoutes.includes(location.pathname);
-
-  return (
-    <>
-      {!isAuthPage && <Navbar />}
-      
-      <Container customClass='start'>
-        <Routes>
-          <Route path='/' element={<Content />} />
-          <Route path='/dashboard' element={<Content />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-        </Routes>
-      </Container>
-
-      {!isAuthPage && <Footer />}
-    </>
   );
 }
 
