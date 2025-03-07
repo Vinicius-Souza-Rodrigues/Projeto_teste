@@ -1,3 +1,10 @@
 .base {
     min-height: 70vh;
 }
+
+.auth_container {
+    display: flex;
+    background-color: rgb(59, 146, 59);
+    min-height: 100vh;
+    align-items: center;
+}

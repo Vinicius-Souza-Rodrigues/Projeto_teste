@@ -22,5 +22,3 @@ class TarefasSerializer(serializers.ModelSerializer):
     
     def create(self, validated_data):
         return Item.objects.create(**validated_data)
-
-        

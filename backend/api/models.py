@@ -27,6 +27,7 @@ class Item(models.Model):
     ]
     
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    
     name = models.CharField(max_length=255)
     state = models.CharField(choices=STATUS_CHOICES, default="pendente", max_length=12)
     description = models.TextField(null=False)

@@ -5,6 +5,7 @@ import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 
 import TarefasLista from "./components/layout/TarefasLista";
+import TarefasCriar from "./components/layout/TarefasCriar";
 
 function App() {
   return (
@@ -17,8 +18,9 @@ function App() {
         </Route>
 
         <Route element={<MainLayout />}>
-                <Route path="/" element={<TarefasLista />} />
-                <Route path="/lista" element={<TarefasLista />} />
+          <Route path="/main" element={<TarefasLista />} />
+          <Route path="/tarefa/criar" element={<TarefasCriar/>} />
+          <Route path="/"/>
         </Route>
 
       </Routes>

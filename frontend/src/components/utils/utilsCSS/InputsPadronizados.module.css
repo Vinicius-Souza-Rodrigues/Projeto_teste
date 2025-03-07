@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    padding: 1.8vh;
+    font-size: 25px;
+    font-family: 'Bree Serif', sans-serif;
+}
+
+.inputs h2 {
+    font-size: 30px;
+    font-family: 'Bree Serif', serif;
+}
+
+.inputs label {
+    margin-right: 15.5vw;
+    font-family: 'Bree Serif', sans-serif;
+}
+
+.inputs input {
+    width: 20vw;
+    height: 1.5vw;
+    padding: 1vw;
+    border-radius: 14px;
+    border: 2px solid grey;
+    font-family: 'Bree Serif', sans-serif;
+}
