@@ -1,4 +1,4 @@
-import styles from "./MainCSS/main.module.css"
+import styles from "./MainCSS/CardTarefa.module.css"
 
 function Cardtarefa( {name, state, description, date} ) {
     return (

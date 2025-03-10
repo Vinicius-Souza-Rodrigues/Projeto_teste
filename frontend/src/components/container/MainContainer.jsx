@@ -1,4 +1,5 @@
 import { Navigate, Outlet } from "react-router-dom";
+import { toast } from "react-toastify";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import styles from "./containerCss/container.module.css";
@@ -19,6 +20,7 @@ const MainContainer = () => {
   const token = localStorage.getItem("token");
 
   if (!isTokenValid(token)) {
+    toast.info("Login de acesso expirado!");
     return <Navigate to="/login" replace />;
   }
 

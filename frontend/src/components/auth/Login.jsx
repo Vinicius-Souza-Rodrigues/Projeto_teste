@@ -1,27 +1,41 @@
-import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom";
-import InputsPadronizados from "../utils/InputsPadronizados"
-import SubmitButtom from "../utils/SubmitButtom"
+import { useState } from "react";
+import { toast } from "react-toastify";
+import { Link, useNavigate } from "react-router-dom";
+import InputsPadronizados from "../utils/InputsPadronizados";
+import SubmitButtom from "../utils/SubmitButtom";
 
-import styles from "./authCSS/Register.module.css"
+import styles from "./authCSS/Register.module.css";
 
 function Login() {
-
-    const [mensagem, setMensagem] = useState()
-    const [user, setuser] = useState({
+    const [user, setUser] = useState({
         username: "",
         password: ""
-    })
+    });
+
+    const [errors, setErrors] = useState({
+        username: false,
+        password: false
+    });
+
     const navigate = useNavigate();
 
-    useEffect(() => {
-
-    }, [])
-
     function submit(e) {
-        console.log(user)
-        EnviarUser(user)
-        e.preventDefault()
+        e.preventDefault();
+
+        setErrors({ username: false, password: false });
+
+        if (!user.username.trim() || !user.password.trim()) {
+            toast.error("Preencha todos os campos!");
+
+            setErrors({
+                username: !user.username.trim(),
+                password: !user.password.trim()
+            });
+
+            return;
+        }
+
+        EnviarUser(user);
     }
 
     function EnviarUser(user) {
@@ -31,22 +45,27 @@ function Login() {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(user)
-        }).then((rsp) => rsp.json())
-          .then(data => {
+        })
+        .then((rsp) => rsp.json())
+        .then(data => {
             if (data.access) {
                 localStorage.setItem("token", data.access);
-                console.log("Token armazenado:", data.access);
+                toast.success("Login Bem-Sucedido!", {
+                    style: { width: "205px", fontSize: "16px", padding: "10px"}
+                });
                 navigate("/main");
-
             } else {
-                console.log("Erro ao fazer login:", data);
+                toast.error("Usuário ou senha inválidos!", {
+                    style: { width: "250px", fontSize: "16px", padding: "10px" }
+                });
+                setErrors({ username: true, password: true });
             }
         })
-        .catch((err) => console.log(err))
+        .catch((err) => console.log(err));
     }
 
     function handleOnChange(e) {
-        setuser({...user, [e.target.name]: e.target.value})
+        setUser({ ...user, [e.target.name]: e.target.value });
     }
 
     return (
@@ -65,6 +84,7 @@ function Login() {
                         value={user.username} 
                         handleChange={handleOnChange} 
                         autoComplete="username"
+                        hasError={errors.username}
                     />
 
                     <InputsPadronizados 
@@ -75,17 +95,18 @@ function Login() {
                         value={user.password} 
                         handleChange={handleOnChange} 
                         autoComplete="password"
+                        hasError={errors.password}
                     />
                 </div>
 
                 <div className={styles.bottom}>
                     <SubmitButtom text="Enviar" />                
                     <p>Não possui uma conta?</p>
-                    <a href="/register">Register</a>
+                    <Link to="/register">Register</Link>
                 </div>
             </form>
         </div>
-    )
+    );
 }
 
-export default Login
+export default Login;

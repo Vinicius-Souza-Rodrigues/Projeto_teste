@@ -25,3 +25,20 @@
     display: flex;
     gap: 50px;
 }
+
+.itens li:hover {
+    scale: 1.125;
+}
+
+.links {
+    color: white;
+    text-decoration: none;
+}
+
+.links:hover {
+    color: rgb(219, 218, 218);
+}
+
+.links:active {
+    color: rgb(204, 203, 203);
+}

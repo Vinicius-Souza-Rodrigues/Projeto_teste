@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-import Cardtarefa from "../main/main"
-import SubmitButtom from "../utils/SubmitButtom"
+import Cardtarefa from "../main/CardTarefa"
+
+import styles from "./layoutCSS/TarefasLista.module.css"
 
 function TarefasLista() {
     const [tarefas, setTarefas] = useState([]);
@@ -25,18 +27,9 @@ function TarefasLista() {
     }, []);
 
     return (
-        <div>
-
             <div>
-                <h2>Deseja criar uma tarefa?</h2>
-
-                <a href="/tarefa/criar">Algo</a>
-            </div>
-
-            <div>
-
                 {tarefas.length > 0 ? (
-                    <ul>
+                    <div className={styles.lista}>
                         {tarefas.map((tarefa) => (
                             <Cardtarefa 
                                 name={tarefa.name} 
@@ -45,14 +38,18 @@ function TarefasLista() {
                                 date={tarefa.date}
                             />
                         ))}
-                    </ul>
+                    </div>
                 ) : (
-                    <div>
-                        <p>Nenhuma tarefa encontrada!</p>
+                    <div className={styles.nada}>
+                        <p className={styles.nothing}>Nenhuma tarefa encontrada!</p>            
+                        
+                        <div className={styles.header}>
+                            <h2>Deseja criar uma tarefa?</h2>
+                            <Link to="/tarefa/criar" className={styles.link}>Criar</Link>
+                        </div>
                     </div>
                 )}
             </div>
-        </div>
     );
 }
 

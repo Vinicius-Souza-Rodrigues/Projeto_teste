@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    font-family: 'Bree Serif', sans-serif;
+}
+
+.header {
+    color: rgb(82, 81, 81);
+    margin-top: 2vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+.link {
+    background-color: rgb(92, 167, 92);
+    padding: 1.2%;
+    width: 22%;
+    text-align: center;
+    border-radius: 15px;
+    border: 2.5px solid rgb(58, 56, 56);
+    color: white;
+    font-size: 21px;
+    text-decoration: none;
+}
+
+.link:hover {
+    background-color: rgb(74, 136, 74);
+    scale: 1.06;
+}
+
+.link:active {
+    background-color: rgb(52, 105, 52);
+    scale: 0.99;
+}
+
+.nothing {
+    color: rgb(82, 81, 81);
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nada {
+    margin-bottom: 20vh;
+}
+
+.lista {
+    display: flex;
+    align-items: center;
+    gap: 5vw;
+    justify-content: space-around;
+}

@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
+.inputError {
+    border: 2px solid red !important;
+    background-color: #ffe6e6;
+    outline: none;
+}
+
+.inputError:focus {
+    border-color: darkred;
+}
+
 .campo {
     display: flex;
     flex-direction: column;

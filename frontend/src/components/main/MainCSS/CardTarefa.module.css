@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    font-family: 'Bree Serif', sans-serif;
+}
+
+.campo {
+    background-color: rgb(194, 194, 194);
+    padding: 2vw;
+    border-radius: 17px;
+    width: 180px;
+}
