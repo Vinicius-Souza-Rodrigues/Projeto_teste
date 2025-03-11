@@ -16,7 +16,7 @@ function isTokenValid(token) {
   }
 }
 
-const MainContainer = () => {
+const MainContainer = ( {customClass} ) => {
   const token = localStorage.getItem("token");
 
   if (!isTokenValid(token)) {
@@ -27,7 +27,7 @@ const MainContainer = () => {
   return (
     <div className={styles.main_container}>
       <Navbar />
-      <div className={styles.base}>
+      <div className={styles[customClass]}>
         <Outlet />
       </div>
       <Footer />

@@ -5,6 +5,10 @@
     justify-content: center;
 }
 
+.base1 {
+    min-height: 70vh;
+}
+
 .auth_container {
     display: flex;
     background-color: rgb(59, 146, 59);

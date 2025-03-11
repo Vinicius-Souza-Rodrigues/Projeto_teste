@@ -6,7 +6,17 @@
 
 .campo {
     background-color: rgb(194, 194, 194);
-    padding: 2vw;
+    padding: 1.3vw;
     border-radius: 17px;
-    width: 180px;
+    width: 230px;
+    border: 2px solid rgb(95, 95, 95);
+}
+
+.titulo {
+    font-size: 25px;
+    border: 2px solid rgb(95, 95, 95);
+    padding: 3px;
+    padding-left: 6px;
+    border-radius: 7px;
+    background-color: rgb(243, 238, 238);
 }
